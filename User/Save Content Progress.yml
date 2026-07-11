@@ -1,0 +1,56 @@
+info:
+  name: Save Content Progress
+  type: http
+  seq: 11
+  tags:
+    - User
+
+http:
+  method: POST
+  url: "{{baseUrl}}http://127.0.0.1:8002/api/save-content-progress/"
+  body:
+    type: json
+    data: '"{\r\n    \"course_content_id\": 31,\r\n    \"completed\": false,\r\n    \"watched_seconds\": 32,\r\n    \"video_duration\": 1200\r\n}"'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}}http://127.0.0.1:8002/api/save-content-progress/"
+      method: POST
+      body:
+        type: json
+        data: '"{\r\n    \"course_content_id\": 31,\r\n    \"completed\": false,\r\n    \"watched_seconds\": 32,\r\n    \"video_duration\": 1200\r\n}"'
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+  - name: 404 Response
+    description: Failure
+    request:
+      url: "{{baseUrl}}http://127.0.0.1:8002/api/save-content-progress/"
+      method: POST
+      body:
+        type: json
+        data: '"{\r\n    \"course_content_id\": 31,\r\n    \"completed\": false,\r\n    \"watched_seconds\": 32,\r\n    \"video_duration\": 1200\r\n}"'
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""

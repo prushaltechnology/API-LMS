@@ -1,0 +1,56 @@
+info:
+  name: add course review
+  type: http
+  seq: 6
+  tags:
+    - Courses
+
+http:
+  method: POST
+  url: "{{baseUrl}} http://127.0.0.1:8002/api/course_review/18/"
+  body:
+    type: json
+    data: '"{\r\n    \"rating\": 5,\r\n    \"title\": \"Excellent Course\",\r\n    \"content\": \"Learned a lot from this course!\"\r\n}"'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}} http://127.0.0.1:8002/api/course_review/18/"
+      method: POST
+      body:
+        type: json
+        data: '"{\r\n    \"rating\": 5,\r\n    \"title\": \"Excellent Course\",\r\n    \"content\": \"Learned a lot from this course!\"\r\n}"'
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+  - name: 404 Response
+    description: Failure
+    request:
+      url: "{{baseUrl}} http://127.0.0.1:8002/api/course_review/18/"
+      method: POST
+      body:
+        type: json
+        data: '"{\r\n    \"rating\": 5,\r\n    \"title\": \"Excellent Course\",\r\n    \"content\": \"Learned a lot from this course!\"\r\n}"'
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""

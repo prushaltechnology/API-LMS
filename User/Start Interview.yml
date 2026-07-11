@@ -1,0 +1,110 @@
+info:
+  name: Start Interview
+  type: http
+  seq: 9
+  tags:
+    - User
+
+http:
+  method: POST
+  url: "{{baseUrl}}https://enrolled-prompt-cemetery-similar.trycloudflare.com/api/start-interview/"
+  body:
+    type: multipart-form
+    data:
+      - name: mode
+        type: text
+        value: demo
+        description: demo, paid, continue
+      - name: interview_type
+        type: text
+        value: HR
+        description: Technical, HR
+      - name: difficulty
+        type: text
+        value: Easy
+        description: Easy, Medium, Hard
+      - name: resume_file
+        type: file
+        value: []
+      - name: jd_file
+        type: file
+        value: []
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}}https://enrolled-prompt-cemetery-similar.trycloudflare.com/api/start-interview/"
+      method: POST
+      body:
+        type: multipart-form
+        data:
+          - name: mode
+            type: text
+            value: demo
+            description: demo, paid, continue
+          - name: interview_type
+            type: text
+            value: HR
+            description: Technical, HR
+          - name: difficulty
+            type: text
+            value: Easy
+            description: Easy, Medium, Hard
+          - name: resume_file
+            type: file
+            value: []
+          - name: jd_file
+            type: file
+            value: []
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+  - name: 404 Response
+    description: Failure
+    request:
+      url: "{{baseUrl}}https://enrolled-prompt-cemetery-similar.trycloudflare.com/api/start-interview/"
+      method: POST
+      body:
+        type: multipart-form
+        data:
+          - name: mode
+            type: text
+            value: demo
+            description: demo, paid, continue
+          - name: interview_type
+            type: text
+            value: HR
+            description: Technical, HR
+          - name: difficulty
+            type: text
+            value: Easy
+            description: Easy, Medium, Hard
+          - name: resume_file
+            type: file
+            value: []
+          - name: jd_file
+            type: file
+            value: []
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""

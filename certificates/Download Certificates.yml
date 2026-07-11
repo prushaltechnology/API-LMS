@@ -1,0 +1,47 @@
+info:
+  name: Download Certificates
+  type: http
+  seq: 2
+  tags:
+    - certificates
+
+http:
+  method: GET
+  url: "{{baseUrl}}https://beatles-gale-seriously-politicians.trycloudflare.com/api/certificate/download/6/"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}}https://beatles-gale-seriously-politicians.trycloudflare.com/api/certificate/download/6/"
+      method: GET
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+  - name: 404 Response
+    description: Failure
+    request:
+      url: "{{baseUrl}}https://beatles-gale-seriously-politicians.trycloudflare.com/api/certificate/download/6/"
+      method: GET
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""

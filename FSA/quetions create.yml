@@ -1,0 +1,236 @@
+info:
+  name: quetions create
+  type: http
+  seq: 5
+  tags:
+    - FSA
+
+http:
+  method: POST
+  url: "{{baseUrl}}http://127.0.0.1:8002/api/questions/"
+  body:
+    type: multipart-form
+    data:
+      - name: assessment
+        type: text
+        value: "12"
+      - name: question_type
+        type: text
+        value: MIXED_CONTENT
+      - name: marks
+        type: text
+        value: "2"
+      - name: negative_marks
+        type: text
+        value: "0"
+      - name: order_no
+        type: text
+        value: "4"
+      - name: is_active
+        type: text
+        value: "true"
+      - name: content_json
+        type: text
+        value: |-
+          {
+            "type": "mixed-content",
+            "content": [
+              {
+                "type": "text",
+                "value": "A digital display counts upward from 0. Two segments are permanently broken and never light up."
+              },
+              {
+                "type": "text",
+                "value": "What is the next number shown by the faulty display?"
+              },
+              {
+                "type": "image",
+                "image_index": 0
+              }
+            ],
+            "options": [
+              {
+                "id": "A",
+                "image_index": 1
+              },
+              {
+                "id": "B",
+                "image_index": 2
+              },
+              {
+                "id": "C",
+                "image_index": 3
+              },
+              {
+                "id": "D",
+                "image_index": 4
+              }
+            ],
+            "correctAnswer": "A"
+          }
+      - name: images
+        type: file
+        value: []
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}}http://127.0.0.1:8002/api/questions/"
+      method: POST
+      body:
+        type: multipart-form
+        data:
+          - name: assessment
+            type: text
+            value: "12"
+          - name: question_type
+            type: text
+            value: MIXED_CONTENT
+          - name: marks
+            type: text
+            value: "2"
+          - name: negative_marks
+            type: text
+            value: "0"
+          - name: order_no
+            type: text
+            value: "4"
+          - name: is_active
+            type: text
+            value: "true"
+          - name: content_json
+            type: text
+            value: |-
+              {
+                "type": "mixed-content",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "A digital display counts upward from 0. Two segments are permanently broken and never light up."
+                  },
+                  {
+                    "type": "text",
+                    "value": "What is the next number shown by the faulty display?"
+                  },
+                  {
+                    "type": "image",
+                    "image_index": 0
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "A",
+                    "image_index": 1
+                  },
+                  {
+                    "id": "B",
+                    "image_index": 2
+                  },
+                  {
+                    "id": "C",
+                    "image_index": 3
+                  },
+                  {
+                    "id": "D",
+                    "image_index": 4
+                  }
+                ],
+                "correctAnswer": "A"
+              }
+          - name: images
+            type: file
+            value: []
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+  - name: 404 Response
+    description: Failure
+    request:
+      url: "{{baseUrl}}http://127.0.0.1:8002/api/questions/"
+      method: POST
+      body:
+        type: multipart-form
+        data:
+          - name: assessment
+            type: text
+            value: "12"
+          - name: question_type
+            type: text
+            value: MIXED_CONTENT
+          - name: marks
+            type: text
+            value: "2"
+          - name: negative_marks
+            type: text
+            value: "0"
+          - name: order_no
+            type: text
+            value: "4"
+          - name: is_active
+            type: text
+            value: "true"
+          - name: content_json
+            type: text
+            value: |-
+              {
+                "type": "mixed-content",
+                "content": [
+                  {
+                    "type": "text",
+                    "value": "A digital display counts upward from 0. Two segments are permanently broken and never light up."
+                  },
+                  {
+                    "type": "text",
+                    "value": "What is the next number shown by the faulty display?"
+                  },
+                  {
+                    "type": "image",
+                    "image_index": 0
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "A",
+                    "image_index": 1
+                  },
+                  {
+                    "id": "B",
+                    "image_index": 2
+                  },
+                  {
+                    "id": "C",
+                    "image_index": 3
+                  },
+                  {
+                    "id": "D",
+                    "image_index": 4
+                  }
+                ],
+                "correctAnswer": "A"
+              }
+          - name: images
+            type: file
+            value: []
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""

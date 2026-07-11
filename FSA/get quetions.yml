@@ -1,0 +1,59 @@
+info:
+  name: get quetions
+  type: http
+  seq: 6
+  tags:
+    - FSA
+
+http:
+  method: GET
+  url: "{{baseUrl}}http://127.0.0.1:8002/api/questions/"
+  params:
+    - name: assessment_id
+      value: "12"
+      type: query
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}}http://127.0.0.1:8002/api/questions/"
+      method: GET
+      params:
+        - name: assessment_id
+          value: "12"
+          type: query
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+  - name: 404 Response
+    description: Failure
+    request:
+      url: "{{baseUrl}}http://127.0.0.1:8002/api/questions/"
+      method: GET
+      params:
+        - name: assessment_id
+          value: "12"
+          type: query
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""

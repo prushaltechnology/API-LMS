@@ -1,0 +1,56 @@
+info:
+  name: add course content
+  type: http
+  seq: 5
+  tags:
+    - Courses
+
+http:
+  method: POST
+  url: "{{baseUrl}} http://127.0.0.1:8000/api/course-content/create/"
+  body:
+    type: json
+    data: '"{\r\n    \"course\": 1,\r\n    \"lesson\": 1,\r\n    \"content_type\": \"TEXT\",\r\n    \"title\": \"What is Django?\",\r\n    \"order\": 1,\r\n    \"preview\": true,\r\n    \"text_content\": \"Django is a high-level Python web framework used to build secure and scalable web apps.\"\r\n}\r\n"'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}} http://127.0.0.1:8000/api/course-content/create/"
+      method: POST
+      body:
+        type: json
+        data: '"{\r\n    \"course\": 1,\r\n    \"lesson\": 1,\r\n    \"content_type\": \"TEXT\",\r\n    \"title\": \"What is Django?\",\r\n    \"order\": 1,\r\n    \"preview\": true,\r\n    \"text_content\": \"Django is a high-level Python web framework used to build secure and scalable web apps.\"\r\n}\r\n"'
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+  - name: 404 Response
+    description: Failure
+    request:
+      url: "{{baseUrl}} http://127.0.0.1:8000/api/course-content/create/"
+      method: POST
+      body:
+        type: json
+        data: '"{\r\n    \"course\": 1,\r\n    \"lesson\": 1,\r\n    \"content_type\": \"TEXT\",\r\n    \"title\": \"What is Django?\",\r\n    \"order\": 1,\r\n    \"preview\": true,\r\n    \"text_content\": \"Django is a high-level Python web framework used to build secure and scalable web apps.\"\r\n}\r\n"'
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""

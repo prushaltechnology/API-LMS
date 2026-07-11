@@ -1,0 +1,56 @@
+info:
+  name: Edit MCQ Question
+  type: http
+  seq: 3
+  tags:
+    - Admin/MCQ Questions
+
+http:
+  method: PUT
+  url: "{{baseUrl}}http://localhostL8000/dashboard/assessments/<int:assessment_id>/mcqs/<int:question_id>/"
+  body:
+    type: json
+    data: '"{\r\n    \"assessment\": 2,\r\n    \"question\": \"\"\r\n}"'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}}http://localhostL8000/dashboard/assessments/<int:assessment_id>/mcqs/<int:question_id>/"
+      method: PUT
+      body:
+        type: json
+        data: '"{\r\n    \"assessment\": 2,\r\n    \"question\": \"\"\r\n}"'
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+  - name: 404 Response
+    description: Failure
+    request:
+      url: "{{baseUrl}}http://localhostL8000/dashboard/assessments/<int:assessment_id>/mcqs/<int:question_id>/"
+      method: PUT
+      body:
+        type: json
+        data: '"{\r\n    \"assessment\": 2,\r\n    \"question\": \"\"\r\n}"'
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""

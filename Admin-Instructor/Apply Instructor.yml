@@ -1,0 +1,92 @@
+info:
+  name: Apply Instructor
+  type: http
+  seq: 1
+  tags:
+    - Admin/Instructor
+
+http:
+  method: POST
+  url: "{{baseUrl}}http://localhost:8000/dashboard/instructor/apply/"
+  body:
+    type: multipart-form
+    data:
+      - name: bio
+        type: text
+        value: test
+      - name: experience
+        type: text
+        value: test
+      - name: linkedin_url
+        type: text
+        value: https://test.com
+      - name: government_id
+        type: file
+        value: []
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}}http://localhost:8000/dashboard/instructor/apply/"
+      method: POST
+      body:
+        type: multipart-form
+        data:
+          - name: bio
+            type: text
+            value: test
+          - name: experience
+            type: text
+            value: test
+          - name: linkedin_url
+            type: text
+            value: https://test.com
+          - name: government_id
+            type: file
+            value: []
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+  - name: 404 Response
+    description: Failure
+    request:
+      url: "{{baseUrl}}http://localhost:8000/dashboard/instructor/apply/"
+      method: POST
+      body:
+        type: multipart-form
+        data:
+          - name: bio
+            type: text
+            value: test
+          - name: experience
+            type: text
+            value: test
+          - name: linkedin_url
+            type: text
+            value: https://test.com
+          - name: government_id
+            type: file
+            value: []
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""

@@ -1,0 +1,56 @@
+info:
+  name: Admin Login
+  type: http
+  seq: 1
+  tags:
+    - Admin/Login
+
+http:
+  method: POST
+  url: "{{baseUrl}}/dashboard/login/"
+  body:
+    type: json
+    data: '"{\r\n  \"email\": \"lms@gmail.com\",\r\n  \"password\": \"1234\"\r\n}"'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}}http://127.0.0.1:8002/dashboard/login/"
+      method: POST
+      body:
+        type: json
+        data: '"{\r\n  \"email\": \"lms@gmail.com\",\r\n  \"password\": \"1234\"\r\n}"'
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+  - name: 404 Response
+    description: Failure
+    request:
+      url: "{{baseUrl}}http://127.0.0.1:8002/dashboard/login/"
+      method: POST
+      body:
+        type: json
+        data: '"{\r\n  \"email\": \"lms@gmail.com\",\r\n  \"password\": \"1234\"\r\n}"'
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""

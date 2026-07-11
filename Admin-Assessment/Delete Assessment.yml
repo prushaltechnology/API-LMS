@@ -1,0 +1,47 @@
+info:
+  name: Delete Assessment
+  type: http
+  seq: 4
+  tags:
+    - Admin/Assessment
+
+http:
+  method: DELETE
+  url: "{{baseUrl}}http://localhost:8000/dashboard/courses/course_id/assessments/assessment_id/"
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}}http://localhost:8000/dashboard/courses/course_id/assessments/assessment_id/"
+      method: DELETE
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+  - name: 404 Response
+    description: Failure
+    request:
+      url: "{{baseUrl}}http://localhost:8000/dashboard/courses/course_id/assessments/assessment_id/"
+      method: DELETE
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""

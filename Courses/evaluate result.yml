@@ -1,0 +1,56 @@
+info:
+  name: evaluate result
+  type: http
+  seq: 2
+  tags:
+    - Courses
+
+http:
+  method: POST
+  url: "{{baseUrl}}https://alt-publishers-split-induced.trycloudflare.com/api/assessments/1/submit/ "
+  body:
+    type: json
+    data: '"{\r\n  \"answers\": {\r\n    \"1\": \"B\"\r\n  }\r\n}\r\n"'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}}https://alt-publishers-split-induced.trycloudflare.com/api/assessments/1/submit/ "
+      method: POST
+      body:
+        type: json
+        data: '"{\r\n  \"answers\": {\r\n    \"1\": \"B\"\r\n  }\r\n}\r\n"'
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+  - name: 404 Response
+    description: Failure
+    request:
+      url: "{{baseUrl}}https://alt-publishers-split-induced.trycloudflare.com/api/assessments/1/submit/ "
+      method: POST
+      body:
+        type: json
+        data: '"{\r\n  \"answers\": {\r\n    \"1\": \"B\"\r\n  }\r\n}\r\n"'
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""

@@ -1,0 +1,56 @@
+info:
+  name: Add Course
+  type: http
+  seq: 2
+  tags:
+    - Admin/Course
+
+http:
+  method: POST
+  url: "{{baseUrl}}http://127.0.0.1:8002/dashboard/admin/courses/"
+  body:
+    type: json
+    data: '"{\r\n  \"title\": \"Spring Boot Mastery\",\r\n  \"description\": \"Learn Spring Boot backend\",\r\n  \"price\": 1200,\r\n  \"discount\": 10,\r\n  \"language\": 1,\r\n  \"level\": 3,\r\n  \"category\": 1,\r\n  \"author\": 5,\r\n  \"status\": \"PUBLISH\",\r\n  \"is_subscription\": false,\r\n  \"featured_video\": \"https://youtube.com/demo\",\r\n\r\n  \"what_you_learn\": [\r\n    {\"points\": \"Build REST APIs\"},\r\n    {\"points\": \"Spring Security\"}\r\n  ],\r\n\r\n  \"requirements\": [\r\n    {\"points\": \"Java basics\"}\r\n  ],\r\n\r\n  \"lessons\": [\r\n    {\r\n      \"name\": \"Introduction\",\r\n      \"order\": 1,\r\n      \"contents\": [\r\n        {\r\n          \"content_type\": \"VIDEO\",\r\n          \"title\": \"Intro Video\",\r\n          \"order\": 1,\r\n          \"preview\": true,\r\n          \"video_url\": \"https://youtube.com/demo\",\r\n          \"video_duration\": 600\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}"'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}}http://127.0.0.1:8002/dashboard/admin/courses/"
+      method: POST
+      body:
+        type: json
+        data: '"{\r\n  \"title\": \"Spring Boot Mastery\",\r\n  \"description\": \"Learn Spring Boot backend\",\r\n  \"price\": 1200,\r\n  \"discount\": 10,\r\n  \"language\": 1,\r\n  \"level\": 3,\r\n  \"category\": 1,\r\n  \"author\": 5,\r\n  \"status\": \"PUBLISH\",\r\n  \"is_subscription\": false,\r\n  \"featured_video\": \"https://youtube.com/demo\",\r\n\r\n  \"what_you_learn\": [\r\n    {\"points\": \"Build REST APIs\"},\r\n    {\"points\": \"Spring Security\"}\r\n  ],\r\n\r\n  \"requirements\": [\r\n    {\"points\": \"Java basics\"}\r\n  ],\r\n\r\n  \"lessons\": [\r\n    {\r\n      \"name\": \"Introduction\",\r\n      \"order\": 1,\r\n      \"contents\": [\r\n        {\r\n          \"content_type\": \"VIDEO\",\r\n          \"title\": \"Intro Video\",\r\n          \"order\": 1,\r\n          \"preview\": true,\r\n          \"video_url\": \"https://youtube.com/demo\",\r\n          \"video_duration\": 600\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}"'
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+  - name: 404 Response
+    description: Failure
+    request:
+      url: "{{baseUrl}}http://127.0.0.1:8002/dashboard/admin/courses/"
+      method: POST
+      body:
+        type: json
+        data: '"{\r\n  \"title\": \"Spring Boot Mastery\",\r\n  \"description\": \"Learn Spring Boot backend\",\r\n  \"price\": 1200,\r\n  \"discount\": 10,\r\n  \"language\": 1,\r\n  \"level\": 3,\r\n  \"category\": 1,\r\n  \"author\": 5,\r\n  \"status\": \"PUBLISH\",\r\n  \"is_subscription\": false,\r\n  \"featured_video\": \"https://youtube.com/demo\",\r\n\r\n  \"what_you_learn\": [\r\n    {\"points\": \"Build REST APIs\"},\r\n    {\"points\": \"Spring Security\"}\r\n  ],\r\n\r\n  \"requirements\": [\r\n    {\"points\": \"Java basics\"}\r\n  ],\r\n\r\n  \"lessons\": [\r\n    {\r\n      \"name\": \"Introduction\",\r\n      \"order\": 1,\r\n      \"contents\": [\r\n        {\r\n          \"content_type\": \"VIDEO\",\r\n          \"title\": \"Intro Video\",\r\n          \"order\": 1,\r\n          \"preview\": true,\r\n          \"video_url\": \"https://youtube.com/demo\",\r\n          \"video_duration\": 600\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}"'
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""

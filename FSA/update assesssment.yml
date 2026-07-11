@@ -1,0 +1,56 @@
+info:
+  name: update assesssment
+  type: http
+  seq: 3
+  tags:
+    - FSA
+
+http:
+  method: GET
+  url: "{{baseUrl}}http://127.0.0.1:8002/api/assessments/5"
+  body:
+    type: json
+    data: '"{\r\n  \"title\": \"Updated maths Assessment\",\r\n  \"description\": \"Test\",\r\n  \"duration_minutes\": 90,\r\n  \"total_marks\": 100,\r\n  \"passing_marks\": 60,\r\n  \"status\": \"PUBLISHED\",\r\n  \"course\": 1\r\n}"'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}}http://127.0.0.1:8002/api/assessments/5"
+      method: GET
+      body:
+        type: json
+        data: '"{\r\n  \"title\": \"Updated maths Assessment\",\r\n  \"description\": \"Test\",\r\n  \"duration_minutes\": 90,\r\n  \"total_marks\": 100,\r\n  \"passing_marks\": 60,\r\n  \"status\": \"PUBLISHED\",\r\n  \"course\": 1\r\n}"'
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+  - name: 404 Response
+    description: Failure
+    request:
+      url: "{{baseUrl}}http://127.0.0.1:8002/api/assessments/5"
+      method: GET
+      body:
+        type: json
+        data: '"{\r\n  \"title\": \"Updated maths Assessment\",\r\n  \"description\": \"Test\",\r\n  \"duration_minutes\": 90,\r\n  \"total_marks\": 100,\r\n  \"passing_marks\": 60,\r\n  \"status\": \"PUBLISHED\",\r\n  \"course\": 1\r\n}"'
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""

@@ -1,0 +1,56 @@
+info:
+  name: Add Category
+  type: http
+  seq: 2
+  tags:
+    - Admin/Category
+
+http:
+  method: POST
+  url: "{{baseUrl}}http://127.0.0.1:8002/dashboard/categories/"
+  body:
+    type: json
+    data: '"{\r\n    \"name\": \"Robotics\",\r\n    \"icon\": \"https://example.com/icons/web.png\"\r\n}\r\n"'
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+
+examples:
+  - name: 200 Response
+    description: Success
+    request:
+      url: "{{baseUrl}}http://127.0.0.1:8002/dashboard/categories/"
+      method: POST
+      body:
+        type: json
+        data: '"{\r\n    \"name\": \"Robotics\",\r\n    \"icon\": \"https://example.com/icons/web.png\"\r\n}\r\n"'
+    response:
+      status: 200
+      statusText: OK
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""
+  - name: 404 Response
+    description: Failure
+    request:
+      url: "{{baseUrl}}http://127.0.0.1:8002/dashboard/categories/"
+      method: POST
+      body:
+        type: json
+        data: '"{\r\n    \"name\": \"Robotics\",\r\n    \"icon\": \"https://example.com/icons/web.png\"\r\n}\r\n"'
+    response:
+      status: 404
+      statusText: Not Found
+      headers:
+        - name: Content-Type
+          value: application/json
+      body:
+        type: json
+        data: ""

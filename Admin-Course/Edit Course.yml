@@ -9,9 +9,10 @@ http:
   method: PUT
   url: "{{baseUrl}}https://perspective-vip-chi-always.trycloudflare.com/dashboard/admin/courses/1/"
   body:
-    type: json
-    data: '"{\r\n  \"title\": \"Updated Course Title\",\r\n  \"price\": 999,\r\n\r\n  \"what_you_learn\": [\r\n    {\"points\": \"New point 1\"},\r\n    {\"points\": \"New point 2\"}\r\n  ],\r\n\r\n  \"requirements\": [\r\n    {\"points\": \"Requirement 1\"}\r\n  ],\r\n\r\n  \"course_contents\": [\r\n    {\r\n      \"lesson_name\": \"Lesson 1\",\r\n      \"lesson_order\": 1,\r\n      \"content_type\": \"VIDEO\",\r\n      \"title\": \"Intro Video\",\r\n      \"video_url\": \"https://youtube.com/abc\",\r\n      \"video_duration\": 10,\r\n      \"preview\": true,\r\n      \"order\": 1\r\n    },\r\n    {\r\n      \"lesson_name\": \"Lesson 1\",\r\n      \"lesson_order\": 2,\r\n      \"content_type\": \"TEXT\",\r\n      \"title\": \"Notes\",\r\n      \"text_content\": \"Some text\",\r\n      \"order\": 2\r\n    }\r\n  ]\r\n}"'
-  auth: inherit
+    type: multipart-form
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1ODQwMjkwLCJpYXQiOjE3ODU4MzkzOTAsImp0aSI6ImEwMmI1NWJlNzEwOTQzNWQ5ZjYwZDg5YzhlZmQxOWRjIiwidXNlcl9pZCI6IjEyIn0.wLi2Ch2rM_6DUlIVhDdzvPA1Dx1Iu_8CTKd4p1NYw1I
 
 settings:
   encodeUrl: true

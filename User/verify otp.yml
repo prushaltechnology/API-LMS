@@ -7,11 +7,20 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}http://127.0.0.1:8002/api/accounts/verify-otp"
+  url: "{{baseUrl}}accounts/verify-otp"
   body:
     type: json
-    data: '"{\r\n  \"user_id\": \"1\",\r\n  \"otp\": \"702862\"\r\n}\r\n"'
+    data: |-
+      {
+        "user_id": 2,
+        "otp": "386012"
+      }
   auth: inherit
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://127.0.0.1:8000/api/
 
 settings:
   encodeUrl: true

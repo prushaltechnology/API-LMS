@@ -7,8 +7,10 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}http://127.0.0.1:8002/dashboard/authors/"
-  auth: inherit
+  url: "{{baseUrl}}dashboard/authors/"
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1ODM5MzU2LCJpYXQiOjE3ODU4Mzg0NTYsImp0aSI6ImRjNDM4OTFhYjRlMjQwOTVhYTA4NWY4OGQ3MTNiOTIwIiwidXNlcl9pZCI6IjEyIn0.WiXc3J3LUtbNMmGkofUaXSrNYN3GcHG6Og16EwP7WT8
 
 settings:
   encodeUrl: true

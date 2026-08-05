@@ -7,10 +7,13 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}http://127.0.0.1:8002/dashboard/languages/"
+  url: "{{baseUrl}}dashboard/languages/"
   body:
     type: json
-    data: '"{\r\n  \"language\": \"Jerman\"\r\n}"'
+    data: |-
+      {
+        "language": "French"
+      }
   auth: inherit
 
 settings:

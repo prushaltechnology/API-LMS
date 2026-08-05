@@ -1,11 +1,11 @@
 info:
   name: Initiate Interview Bot
   type: http
-  seq: 2
+  seq: 18
 
 http:
   method: POST
-  url: "{{baseUrl}}http://localhost:8005/api/initiate-interview/"
+  url: "{{baseUrl}}initiate-interview/"
   body:
     type: multipart-form
     data:
@@ -20,10 +20,14 @@ http:
         value: easy
       - name: jdFile
         type: file
-        value: []
+        value:
+          - C:\Users\Pratik\Downloads\JD_web.pdf
+        contentType: application/pdf
       - name: resumeFile
         type: file
-        value: []
+        value:
+          - C:\Users\Pratik\Downloads\Resume (15).pdf
+        contentType: application/pdf
   auth: inherit
 
 settings:

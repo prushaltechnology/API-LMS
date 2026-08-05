@@ -7,7 +7,7 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}https://alt-publishers-split-induced.trycloudflare.com/api/assessments/1/ "
+  url: "{{baseUrl}}assessments/1/"
   auth: inherit
 
 settings:

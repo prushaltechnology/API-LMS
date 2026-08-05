@@ -7,10 +7,13 @@ info:
 
 http:
   method: PUT
-  url: "{{baseUrl}}http://192.168.1.45:8002/dashboard/levels/1/"
+  url: "{{baseUrl}}dashboard/levels/2/"
   body:
     type: json
-    data: '"{\r\n    \"name\": \"Beginner\"\r\n}\r\n"'
+    data: |-
+      {
+          "name": "Expert"
+      }
   auth: inherit
 
 settings:

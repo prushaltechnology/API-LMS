@@ -7,11 +7,17 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}http://127.0.0.1:8002/dashboard/categories/"
+  url: "{{baseUrl}}dashboard/categories/"
   body:
     type: json
-    data: '"{\r\n    \"name\": \"Robotics\",\r\n    \"icon\": \"https://example.com/icons/web.png\"\r\n}\r\n"'
-  auth: inherit
+    data: |-
+      {
+        "name": "Robotics",
+        "icon": "https://example.com/icons/web.png"
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1ODI2NTIxLCJpYXQiOjE3ODU4MjU2MjEsImp0aSI6IjJmMmJlOGNiYzU1YzQxMWNhM2U4ZDg1ZDVjNjU0YTJiIiwidXNlcl9pZCI6IjEyIn0.3kZbGIy6Jco8w6NxYZ-VOZJhSa1rPglN8WWb7xkYMy8
 
 settings:
   encodeUrl: true

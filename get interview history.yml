@@ -1,12 +1,17 @@
 info:
   name: get interview history
   type: http
-  seq: 3
+  seq: 19
 
 http:
   method: GET
-  url: "{{baseUrl}}http://127.0.0.1:8002/api/interview-history/"
+  url: "{{baseUrl}}interview-history/"
   auth: inherit
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://127.0.0.1:8000/api/
 
 settings:
   encodeUrl: true

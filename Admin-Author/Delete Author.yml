@@ -7,8 +7,10 @@ info:
 
 http:
   method: DELETE
-  url: "{{baseUrl}}http://192.168.1.45:8002/dashboard/authors/1/"
-  auth: inherit
+  url: "{{baseUrl}}dashboard/authors/3/"
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1ODM2OTk1LCJpYXQiOjE3ODU4MzYwOTUsImp0aSI6IjAxOWE4ZDJmMDg4NjQ3ZWU5NWVhMzVlZjMwOWFlYmRmIiwidXNlcl9pZCI6IjEyIn0.dL-DNvI6EddcFDbr8K-dE_iBKmPUMBTrtV8i1SoUXB4
 
 settings:
   encodeUrl: true

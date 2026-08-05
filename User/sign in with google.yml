@@ -1,0 +1,21 @@
+info:
+  name: sign in with google
+  type: http
+  seq: 14
+
+http:
+  method: POST
+  url: "{{baseUrl}}accounts/google-login/"
+  body:
+    type: json
+    data: |-
+      {
+        "id_token": "GOOGLE_ID_TOKEN_HERE"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

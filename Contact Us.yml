@@ -1,14 +1,19 @@
 info:
   name: Contact Us
   type: http
-  seq: 1
+  seq: 13
 
 http:
   method: POST
-  url: "{{baseUrl}}http://127.0.0.1:8000/api/contact-us/"
+  url: "{{baseUrl}}contact-us/"
   body:
     type: json
-    data: '"{\r\n  \"name\": \"Prajakta Kadam\",\r\n  \"email\": \"prajakta@gmail.com\",\r\n  \"message\": \"I need help with LMS courses\"\r\n}\r\n"'
+    data: |-
+      {
+        "name": "Prajakta Kadam",
+        "email": "pratikshayamgar2006@gmail.com",
+        "message": "I need help with LMS courses"
+      }
   auth: inherit
 
 settings:

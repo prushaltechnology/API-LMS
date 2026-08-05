@@ -7,11 +7,27 @@ info:
 
 http:
   method: PUT
-  url: "{{baseUrl}}http://192.168.1.45:8002/dashboard/authors/1/"
+  url: "{{baseUrl}}dashboard/authors/2/"
   body:
     type: json
-    data: '"{\r\n  \"name\": \"Updated Author name\",\r\n  \"about_author\": \"Updated description\"\r\n  \r\n}"'
-  auth: inherit
+    data: |-
+      {
+        "name": "Nilesh Chavhan",
+        "about_author": "Expert instructor of robotics"
+      }
+
+
+
+
+
+
+
+
+
+      //   "author_profile": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1ODM5MzU2LCJpYXQiOjE3ODU4Mzg0NTYsImp0aSI6ImRjNDM4OTFhYjRlMjQwOTVhYTA4NWY4OGQ3MTNiOTIwIiwidXNlcl9pZCI6IjEyIn0.WiXc3J3LUtbNMmGkofUaXSrNYN3GcHG6Og16EwP7WT8
 
 settings:
   encodeUrl: true

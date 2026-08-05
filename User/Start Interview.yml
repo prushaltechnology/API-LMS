@@ -7,28 +7,29 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}https://enrolled-prompt-cemetery-similar.trycloudflare.com/api/start-interview/"
+  url: "{{baseUrl}}start-interview/"
   body:
     type: multipart-form
     data:
       - name: mode
         type: text
         value: demo
-        description: demo, paid, continue
       - name: interview_type
         type: text
         value: HR
-        description: Technical, HR
       - name: difficulty
         type: text
         value: Easy
-        description: Easy, Medium, Hard
       - name: resume_file
         type: file
-        value: []
+        value:
+          - C:\Users\Pratik\Downloads\Resume (15).pdf
+        contentType: application/pdf
       - name: jd_file
         type: file
-        value: []
+        value:
+          - C:\Users\Pratik\Downloads\JD_web.pdf
+        contentType: application/pdf
   auth: inherit
 
 settings:

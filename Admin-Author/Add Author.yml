@@ -7,11 +7,18 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}http://127.0.0.1:8002/dashboard/authors/"
+  url: "{{baseUrl}}dashboard/authors/"
   body:
     type: json
-    data: '"{\r\n  \"name\": \"Nilesh Chavhan\",\r\n  \"about_author\": \"Expert instructor of robotics\",\r\n  \"author_profile\": \"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg==\"\r\n}"'
-  auth: inherit
+    data: |-
+      {
+        "name": "Nilesh Chavhan",
+        "about_author": "Expert instructor of robotics",
+        "author_profile": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO9TXL0Y4OHwAAAABJRU5ErkJggg=="
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1ODM2OTk1LCJpYXQiOjE3ODU4MzYwOTUsImp0aSI6IjAxOWE4ZDJmMDg4NjQ3ZWU5NWVhMzVlZjMwOWFlYmRmIiwidXNlcl9pZCI6IjEyIn0.dL-DNvI6EddcFDbr8K-dE_iBKmPUMBTrtV8i1SoUXB4
 
 settings:
   encodeUrl: true

@@ -7,11 +7,91 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}http://127.0.0.1:8002/dashboard/admin/courses/"
+  url: "{{baseUrl}}dashboard/admin/courses/"
   body:
-    type: json
-    data: '"{\r\n  \"title\": \"Spring Boot Mastery\",\r\n  \"description\": \"Learn Spring Boot backend\",\r\n  \"price\": 1200,\r\n  \"discount\": 10,\r\n  \"language\": 1,\r\n  \"level\": 3,\r\n  \"category\": 1,\r\n  \"author\": 5,\r\n  \"status\": \"PUBLISH\",\r\n  \"is_subscription\": false,\r\n  \"featured_video\": \"https://youtube.com/demo\",\r\n\r\n  \"what_you_learn\": [\r\n    {\"points\": \"Build REST APIs\"},\r\n    {\"points\": \"Spring Security\"}\r\n  ],\r\n\r\n  \"requirements\": [\r\n    {\"points\": \"Java basics\"}\r\n  ],\r\n\r\n  \"lessons\": [\r\n    {\r\n      \"name\": \"Introduction\",\r\n      \"order\": 1,\r\n      \"contents\": [\r\n        {\r\n          \"content_type\": \"VIDEO\",\r\n          \"title\": \"Intro Video\",\r\n          \"order\": 1,\r\n          \"preview\": true,\r\n          \"video_url\": \"https://youtube.com/demo\",\r\n          \"video_duration\": 600\r\n        }\r\n      ]\r\n    }\r\n  ]\r\n}"'
-  auth: inherit
+    type: multipart-form
+    data:
+      - name: title
+        type: text
+        value: Spring Boot Mastery
+      - name: description
+        type: text
+        value: Learn Spring Boot backend
+      - name: price
+        type: text
+        value: "1200"
+      - name: discount
+        type: text
+        value: "10"
+      - name: language
+        type: text
+        value: "0"
+      - name: level
+        type: text
+        value: "1"
+      - name: category
+        type: text
+        value: "1"
+      - name: author
+        type: text
+        value: "1"
+      - name: status
+        type: text
+        value: PUBLISH
+      - name: is_subscription
+        type: text
+        value: "false"
+      - name: featured_video
+        type: text
+        value: https://youtube.com/demo
+      - name: what_you_learn
+        type: text
+        value: |-
+          [
+
+            {
+
+              "points": "Build REST APIs"
+
+            },
+
+            {
+
+              "points": "Spring Security"
+
+            }
+
+          ]
+      - name: requirements
+        type: text
+        value: |-
+          [
+            {
+              "points": "Java basics"
+            }
+          ]
+      - name: lessons
+        type: text
+        value: |-
+          [
+            {
+              "name": "Introduction",
+              "order": 1,
+              "contents": [
+                {
+                  "content_type": "VIDEO",
+                  "title": "Intro Video",
+                  "order": 1,
+                  "preview": true,
+                  "video_url": "https://youtube.com/demo",
+                  "video_duration": 600
+                }
+              ]
+            }
+          ]
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1ODQwMjkwLCJpYXQiOjE3ODU4MzkzOTAsImp0aSI6ImEwMmI1NWJlNzEwOTQzNWQ5ZjYwZDg5YzhlZmQxOWRjIiwidXNlcl9pZCI6IjEyIn0.wLi2Ch2rM_6DUlIVhDdzvPA1Dx1Iu_8CTKd4p1NYw1I
 
 settings:
   encodeUrl: true

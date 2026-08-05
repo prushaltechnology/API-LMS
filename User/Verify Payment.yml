@@ -7,11 +7,18 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}http://localhost:8000/api/verify-order/"
+  url: "{{baseUrl}}verify-order/"
   body:
     type: json
-    data: '"{\r\n    \"razorpay_order_id\": \"\",\r\n    \"razorpay_payment_id\": \"\",\r\n    \"razorpay_signature\": \"\"\r\n}"'
-  auth: inherit
+    data: |-
+      {
+        "razorpay_order_id": "",
+        "razorpay_payment_id": 2,
+        "razorpay_signature": ""
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1ODQ2NDc3LCJpYXQiOjE3ODU4NDU1NzcsImp0aSI6Ijc3ZDViMDcxMGE1NjRmYmZhMWI2NTU4N2E2NDYxMGZhIiwidXNlcl9pZCI6IjIifQ.dilY-uAMo1F78ne30Y7Oeg4sXR7aYLU9H5EtA1EVtvM
 
 settings:
   encodeUrl: true

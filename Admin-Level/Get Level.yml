@@ -7,8 +7,10 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}http://127.0.0.1:8002/dashboard/levels/"
-  auth: inherit
+  url: "{{baseUrl}}dashboard/levels/"
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1ODQwMjkwLCJpYXQiOjE3ODU4MzkzOTAsImp0aSI6ImEwMmI1NWJlNzEwOTQzNWQ5ZjYwZDg5YzhlZmQxOWRjIiwidXNlcl9pZCI6IjEyIn0.wLi2Ch2rM_6DUlIVhDdzvPA1Dx1Iu_8CTKd4p1NYw1I
 
 settings:
   encodeUrl: true

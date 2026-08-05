@@ -7,11 +7,13 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}http://192.168.1.45:8002/api/accounts/profile/7"
+  url: "{{baseUrl}}accounts/profile/7"
   body:
     type: json
     data: '""'
-  auth: inherit
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1ODM4NDA4LCJpYXQiOjE3ODU4Mzc1MDgsImp0aSI6IjExYTY2MDY5NWU4ZDRiN2U5NmEyYjgzMTRkYzkyYmMwIiwidXNlcl9pZCI6IjIifQ.BzgUOLvMHL6ufl3FpLOG1PBu-he-bci6xoSfrb2jY80
 
 settings:
   encodeUrl: true

@@ -7,10 +7,13 @@ info:
 
 http:
   method: PUT
-  url: "{{baseUrl}}http://127.0.0.1:800/dashboard/languages/2/"
+  url: "{{baseUrl}}dashboard/languages/1/"
   body:
     type: json
-    data: '"{\r\n  \"language\": \"Jerman\"\r\n}"'
+    data: |-
+      {
+        "language": "Spanish"
+      }
   auth: inherit
 
 settings:

@@ -7,8 +7,13 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}https://toolkit-pan-philadelphia-healing.trycloudflare.com/api/check-chat-access/"
+  url: "{{baseUrl}}check-chat-access/"
   auth: inherit
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://127.0.0.1:8001/api/
 
 settings:
   encodeUrl: true

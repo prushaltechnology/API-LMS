@@ -7,11 +7,19 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}http://127.0.0.1:8002/api/accounts/register"
+  url: "{{baseUrl}}accounts/register"
   body:
     type: json
-    data: '"{\r\n  \"email\": \"prajktakadam927@gmail.com\"\r\n}"'
+    data: |-
+      {
+        "email": "pratikshayamgar2006@gmail.com"
+      }
   auth: inherit
+
+runtime:
+  variables:
+    - name: baseUrl
+      value: http://127.0.0.1:8000/api/
 
 settings:
   encodeUrl: true

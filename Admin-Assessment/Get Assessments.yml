@@ -7,8 +7,10 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/dashboard/assessments/1/"
-  auth: inherit
+  url: "{{baseUrl}}/dashboard/assessments/5/"
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1ODQ1MDI2LCJpYXQiOjE3ODU4NDQxMjYsImp0aSI6ImY4NTAzOWZiMGU2YTRjN2JiMzQ0ODA2OWI5MGY4YjQ2IiwidXNlcl9pZCI6IjEyIn0.TSxMk3km6qJfcok8Wd1AofQkyheWEf2nwKE7l5wHdZM
 
 settings:
   encodeUrl: true

@@ -7,11 +7,18 @@ info:
 
 http:
   method: PUT
-  url: "{{baseUrl}}http://localhost:8000/dashboard/courses/course_id/assessments/assessment_id/"
+  url: "{{baseUrl}}/dashboard/courses/5/assessments/1/"
   body:
     type: json
-    data: '"{\r\n    \"course\": 1,\r\n    \"day_number\": 2\r\n}"'
-  auth: inherit
+    data: |-
+      {
+        "title": "Day 1 Assessment - Updated",
+        "day_number": 1,
+        "is_final": true
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1ODQ0ODk5LCJpYXQiOjE3ODU4NDM5OTksImp0aSI6IjRkOWI2ODMzNmIwYTQyNDRhMDhhZGEwYzQzMzczNjQwIiwidXNlcl9pZCI6IjEyIn0.xyN3MonDI8aR40cCe-FBtZ-LS-VNhdgmG2EByG2cbb8
 
 settings:
   encodeUrl: true

@@ -7,10 +7,14 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}/dashboard/login/"
+  url: "{{baseUrl}}dashboard/login/"
   body:
     type: json
-    data: '"{\r\n  \"email\": \"lms@gmail.com\",\r\n  \"password\": \"1234\"\r\n}"'
+    data: |-
+      {
+        "email": "admin@gmail.com",
+        "password": "Admin@123"
+      }
   auth: inherit
 
 settings:

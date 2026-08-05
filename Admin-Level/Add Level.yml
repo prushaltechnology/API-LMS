@@ -7,10 +7,13 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}http://127.0.0.1:8002/dashboard/levels/"
+  url: "{{baseUrl}}dashboard/levels/"
   body:
     type: json
-    data: '"{\r\n  \"name\": \"Beginner\"\r\n}"'
+    data: |-
+      {
+          "name": "Beginner"
+      }
   auth: inherit
 
 settings:

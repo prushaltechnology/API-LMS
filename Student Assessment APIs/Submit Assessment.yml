@@ -1,0 +1,35 @@
+info:
+  name: Submit Assessment
+  type: http
+  seq: 2
+
+http:
+  method: POST
+  url: "{{baseUrl}}assessment/1/submit/"
+  body:
+    type: json
+    data: |-
+      {
+        "answers": [
+          {
+            "question_id": 1,
+            "answer_json": {
+              "selectedOption": "B"
+            }
+          },
+          {
+            "question_id": 2,
+            "answer_json": {
+              "code": "a, b = map(int, input().split())\nprint(a + b)",
+              "language": "python"
+            }
+          }
+        ]
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

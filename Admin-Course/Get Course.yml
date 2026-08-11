@@ -10,7 +10,7 @@ http:
   url: "{{baseUrl}}/dashboard/admin/courses/"
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1ODQzODkxLCJpYXQiOjE3ODU4NDI5OTEsImp0aSI6IjBiN2RmNGJhYzJlZjQ1MTc5MzdjOWY2YjJkYTdmYWZhIiwidXNlcl9pZCI6IjEyIn0.3rWtS2U_spyvO8BLlMJQhMQcgAZqdPV-2zF8HmLeop4
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2MDkxMTE3LCJpYXQiOjE3ODYwOTAyMTcsImp0aSI6ImFlM2U3ZWFkNzcxYjRiNDFiMDg3YWMzOWVhMWRiNmY4IiwidXNlcl9pZCI6IjEyIn0.GQpmaU_31wwShihk48Fsrq7Px0ULZplA8cQ3Ackfe2o
 
 settings:
   encodeUrl: true

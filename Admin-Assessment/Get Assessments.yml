@@ -7,10 +7,10 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/dashboard/assessments/5/"
+  url: "{{baseUrl}}api/assessments/"
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1ODQ1MDI2LCJpYXQiOjE3ODU4NDQxMjYsImp0aSI6ImY4NTAzOWZiMGU2YTRjN2JiMzQ0ODA2OWI5MGY4YjQ2IiwidXNlcl9pZCI6IjEyIn0.TSxMk3km6qJfcok8Wd1AofQkyheWEf2nwKE7l5wHdZM
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2NDMwNTc3LCJpYXQiOjE3ODY0Mjk2NzcsImp0aSI6IjkzODU0YWFkNTg1OTRjODQ4ZTE4ZGQxMGE3N2MwZDM0IiwidXNlcl9pZCI6IjEyIn0.f20FM-P4ChQIwzb5TXRMeEEewaz2WTbVVLnrQqB3PiA
 
 settings:
   encodeUrl: true

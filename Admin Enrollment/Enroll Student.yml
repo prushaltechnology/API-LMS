@@ -1,0 +1,24 @@
+info:
+  name: Enroll Student
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: "{{baseUrl}}admin/enroll-student/"
+  body:
+    type: json
+    data: |-
+      {
+          "user_id": 5,
+          "course_id": 5
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1OTk1OTgxLCJpYXQiOjE3ODU5OTUwODEsImp0aSI6ImQwNThjNGJkZTYwYjQ4MjBiZWVmNzBkNzhmYTQyOGNiIiwidXNlcl9pZCI6IjEyIn0.gVDRGhT-AFWlAT_xCnekqJYxPH5ukBqv0hv6LHJBhMU
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

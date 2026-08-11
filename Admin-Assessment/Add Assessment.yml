@@ -7,18 +7,26 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}/dashboard/assessments/5/"
+  url: "{{baseUrl}}api/assessments"
   body:
     type: json
     data: |-
       {
-        "title": "Day 1 Assessment",
-        "day_number": 1,
-        "is_final": true
+          "course": 17,
+          "title": "Python Programming Assessment - Day 1",
+          "description": "Basic Python programming assessment covering variables, data types, conditions and loops.",
+          "duration_minutes": 30,
+          "total_marks": 10,
+          "passing_marks": 5,
+          "status": "PUBLISHED",
+          "day_number": 1,
+          "instructions": "Read each question carefully. Submit the assessment before the time expires.",
+          "is_final": false,
+          "order_no": 1
       }
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1ODQzODkxLCJpYXQiOjE3ODU4NDI5OTEsImp0aSI6IjBiN2RmNGJhYzJlZjQ1MTc5MzdjOWY2YjJkYTdmYWZhIiwidXNlcl9pZCI6IjEyIn0.3rWtS2U_spyvO8BLlMJQhMQcgAZqdPV-2zF8HmLeop4
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2NDI2MzQ3LCJpYXQiOjE3ODY0MjU0NDcsImp0aSI6IjAxMjU3NTM4YmM2NzQ3Y2Y4OTAxNTQ4NGJmMjZiZWUwIiwidXNlcl9pZCI6IjEyIn0.NmbBcZxmOiclS4Msnl7TzOFi713L3taa5pZ7dSCEaJI
 
 settings:
   encodeUrl: true

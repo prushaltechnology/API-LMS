@@ -1,11 +1,11 @@
 info:
-  name: delete EnrollCourse
+  name: Student Assessment Summary
   type: http
-  seq: 3
+  seq: 5
 
 http:
-  method: DELETE
-  url: "{{baseUrl}}enroll/1/"
+  method: GET
+  url: "{{baseUrl}}student-assessment-summary/5/"
   auth: inherit
 
 settings:

@@ -1,16 +1,17 @@
 info:
-  name: sign in with google
+  name: Run Code
   type: http
-  seq: 14
+  seq: 1
 
 http:
   method: POST
-  url: "{{baseUrl}}accounts/google-login/"
+  url: "{{baseUrl}}api/coding/run/"
   body:
     type: json
     data: |-
       {
-        "id_token": "YOUR_GOOGLE_ID_TOKEN"
+        "question_id": 1,
+        "code": "a, b = map(int, input().split())\nprint(a + b)"
       }
   auth: inherit
 

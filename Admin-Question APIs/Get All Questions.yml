@@ -1,0 +1,17 @@
+info:
+  name: Get All Questions
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: "{{baseUrl}}api/questions/"
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2NDMyMzU2LCJpYXQiOjE3ODY0MzE0NTYsImp0aSI6IjU5MGUwMTgzMDc2YzQ4ZjViOTZjM2M1NTIyNjEyNTRiIiwidXNlcl9pZCI6IjEyIn0.PT3YPfxyLtZ_jFVu3-eZP9oPKYR-ij_t29KDi4sRGio
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

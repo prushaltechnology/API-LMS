@@ -1,11 +1,11 @@
 info:
-  name: delete EnrollCourse
+  name: Delete Question
   type: http
-  seq: 3
+  seq: 5
 
 http:
   method: DELETE
-  url: "{{baseUrl}}enroll/1/"
+  url: "{{baseUrl}}/questions/"
   auth: inherit
 
 settings:

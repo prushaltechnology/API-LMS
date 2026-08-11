@@ -8,6 +8,7 @@ http:
   url: "{{baseUrl}}featured-courses/"
   auth:
     type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2MDAwMjIzLCJpYXQiOjE3ODU5OTkzMjMsImp0aSI6ImU4OWJjYmE0NWFiMTRiMTBhZTM2ODY5NzY4MDljMWRkIiwidXNlcl9pZCI6IjEyIn0.8OPHLQ6P_oQEOIQMzOCN6SGzzzvvVFTxe5gh0pPmM6Q
 
 settings:
   encodeUrl: true

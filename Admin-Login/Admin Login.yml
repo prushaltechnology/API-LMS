@@ -15,7 +15,9 @@ http:
         "email": "admin@gmail.com",
         "password": "Admin@123"
       }
-  auth: inherit
+  auth:
+    type: bearer
+    token: ""
 
 settings:
   encodeUrl: true

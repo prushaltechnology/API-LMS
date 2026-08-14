@@ -7,10 +7,14 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}/dashboard/admin/courses/"
+  url: "{{baseUrl}}/dashboard/admin/courses/?page=1"
+  params:
+    - name: page
+      value: "1"
+      type: query
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2MDkxMTE3LCJpYXQiOjE3ODYwOTAyMTcsImp0aSI6ImFlM2U3ZWFkNzcxYjRiNDFiMDg3YWMzOWVhMWRiNmY4IiwidXNlcl9pZCI6IjEyIn0.GQpmaU_31wwShihk48Fsrq7Px0ULZplA8cQ3Ackfe2o
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2NjAzMDI2LCJpYXQiOjE3ODY2MDIxMjYsImp0aSI6ImUxOTlkMzAwYTZjZTRmYTRhOWE1NzY3MWEzNGMwOTQ3IiwidXNlcl9pZCI6IjEyIn0.M8v2NyZcm_cwnvt45CZXE3EET-TNnu6mxyyhMqcv91E
 
 settings:
   encodeUrl: true

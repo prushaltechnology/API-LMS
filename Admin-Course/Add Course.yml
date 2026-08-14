@@ -7,7 +7,7 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}dashboard/admin/courses/"
+  url: "{{baseUrl}}api/dashboard/admin/courses/"
   body:
     type: multipart-form
     data:
@@ -91,7 +91,7 @@ http:
           ]
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg1ODQwMjkwLCJpYXQiOjE3ODU4MzkzOTAsImp0aSI6ImEwMmI1NWJlNzEwOTQzNWQ5ZjYwZDg5YzhlZmQxOWRjIiwidXNlcl9pZCI6IjEyIn0.wLi2Ch2rM_6DUlIVhDdzvPA1Dx1Iu_8CTKd4p1NYw1I
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2NDI2MjE2LCJpYXQiOjE3ODY0MjUzMTYsImp0aSI6IjE0MTA5NmI5ZThiZTQ1YTNiOTYwN2ExYmE1ZTIxYjM2IiwidXNlcl9pZCI6IjEyIn0.-Y2JPrgznNRRSnqHme0TK3RJqrUF2vKrr8_latfJvXQ
 
 settings:
   encodeUrl: true

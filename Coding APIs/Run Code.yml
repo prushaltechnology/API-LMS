@@ -11,9 +11,12 @@ http:
     data: |-
       {
         "question_id": 1,
-        "code": "a, b = map(int, input().split())\nprint(a + b)"
+        "language": "java",
+        "code": "import java.util.*;public class Submission{public static void main(String[] args){Scanner sc = new Scanner(System.in); int a = sc.nextInt();  int b = sc.nextInt();   System.out.println(a + b);    }}"
       }
-  auth: inherit
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2NjE1Njg1LCJpYXQiOjE3ODY2MTQ3ODUsImp0aSI6IjFjYzVlOGM4ZDMyYzQyNzBiZDhiM2FmYjU4MWQ5NzA4IiwidXNlcl9pZCI6IjEyIn0.Sfc7g78wQZ2UTdcciDXqd6BF2cMvLcoYxSxzs7gCQYc
 
 settings:
   encodeUrl: true

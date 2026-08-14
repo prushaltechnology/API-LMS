@@ -5,8 +5,33 @@ info:
 
 http:
   method: PATCH
-  url: "{{baseUrl}}questions/reorder/"
-  auth: inherit
+  url: "{{baseUrl}}api/questions/reorder/"
+  body:
+    type: json
+    data: |-
+      {
+        "questions": [
+          {
+            "id": 1,
+            "order_no": 4
+          },
+          {
+            "id": 2,
+            "order_no": 3
+          },
+          {
+            "id": 3,
+            "order_no": 1
+          },
+          {
+            "id": 4,
+            "order_no": 2
+          }
+        ]
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2NDQzMDIwLCJpYXQiOjE3ODY0NDIxMjAsImp0aSI6ImI4ODI4YzA0Y2FjYzQ3OTM4YzcxYjFiMTA5OTVkNDVlIiwidXNlcl9pZCI6IjEyIn0.uy-SQIDeWBEgRVwagmKNuJa1WTzGgtqwPqaDyEOUuUk
 
 settings:
   encodeUrl: true

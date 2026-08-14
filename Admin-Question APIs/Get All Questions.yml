@@ -8,7 +8,7 @@ http:
   url: "{{baseUrl}}api/questions/"
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2NDMyMzU2LCJpYXQiOjE3ODY0MzE0NTYsImp0aSI6IjU5MGUwMTgzMDc2YzQ4ZjViOTZjM2M1NTIyNjEyNTRiIiwidXNlcl9pZCI6IjEyIn0.PT3YPfxyLtZ_jFVu3-eZP9oPKYR-ij_t29KDi4sRGio
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2NjE1Njg1LCJpYXQiOjE3ODY2MTQ3ODUsImp0aSI6IjFjYzVlOGM4ZDMyYzQyNzBiZDhiM2FmYjU4MWQ5NzA4IiwidXNlcl9pZCI6IjEyIn0.Sfc7g78wQZ2UTdcciDXqd6BF2cMvLcoYxSxzs7gCQYc
 
 settings:
   encodeUrl: true

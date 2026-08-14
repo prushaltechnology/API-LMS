@@ -5,8 +5,10 @@ info:
 
 http:
   method: GET
-  url: "{{baseUrl}}assessment/1/"
-  auth: inherit
+  url: "{{baseUrl}}api/assessment-detail/13/"
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2NDQzMDIwLCJpYXQiOjE3ODY0NDIxMjAsImp0aSI6ImI4ODI4YzA0Y2FjYzQ3OTM4YzcxYjFiMTA5OTVkNDVlIiwidXNlcl9pZCI6IjEyIn0.uy-SQIDeWBEgRVwagmKNuJa1WTzGgtqwPqaDyEOUuUk
 
 settings:
   encodeUrl: true

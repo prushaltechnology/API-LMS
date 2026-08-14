@@ -5,8 +5,29 @@ info:
 
 http:
   method: PATCH
-  url: "{{baseUrl}}assessments/reorder/"
-  auth: inherit
+  url: "{{baseUrl}}api/assessments/reorder/"
+  body:
+    type: json
+    data: |-
+      {
+        "assessments": [
+          {
+            "id": 13,
+            "order_no": 3
+          },
+          {
+            "id": 14,
+            "order_no": 1
+          },
+          {
+            "id": 15,
+            "order_no": 2
+          }
+        ]
+      } 
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2NDQzMDIwLCJpYXQiOjE3ODY0NDIxMjAsImp0aSI6ImI4ODI4YzA0Y2FjYzQ3OTM4YzcxYjFiMTA5OTVkNDVlIiwidXNlcl9pZCI6IjEyIn0.uy-SQIDeWBEgRVwagmKNuJa1WTzGgtqwPqaDyEOUuUk
 
 settings:
   encodeUrl: true

@@ -1,0 +1,17 @@
+info:
+  name: get courses
+  type: http
+  seq: 7
+
+http:
+  method: GET
+  url: "{{baseUrl}}api/courses/"
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2NjIyNjkwLCJpYXQiOjE3ODY2MjE3OTAsImp0aSI6ImMwNWNkOTE5NGM3NTRjODQ4NWZiMGZiOWFmOWQ0ZmRiIiwidXNlcl9pZCI6IjIifQ.OPnfuCl7bsSyDExq6s3cp6x36pP3iYd61Q17-EGsIkI
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

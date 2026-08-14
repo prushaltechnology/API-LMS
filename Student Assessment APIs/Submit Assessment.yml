@@ -5,7 +5,7 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}}assessment/1/submit/"
+  url: "{{baseUrl}}api/submit-assessment/13/"
   body:
     type: json
     data: |-
@@ -14,19 +14,34 @@ http:
           {
             "question_id": 1,
             "answer_json": {
-              "selectedOption": "B"
+              "language": "python",
+              "code": "a, b = map(int, input().split())\nprint(a + b)"
             }
           },
           {
             "question_id": 2,
             "answer_json": {
-              "code": "a, b = map(int, input().split())\nprint(a + b)",
-              "language": "python"
+              "selectedOption": "B"
+            }
+          },
+          {
+            "question_id": 3,
+            "answer_json": {
+              "selectedOption": "B"
+            }
+          },
+          {
+            "question_id": 4,
+            "answer_json": {
+              "language": "python",
+              "code": "a, b = map(int, input().split())\nprint(a + b)"
             }
           }
         ]
       }
-  auth: inherit
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2NDM5MDE1LCJpYXQiOjE3ODY0MzgxMTUsImp0aSI6IjA3ZTAxMTBlMjc2NDRlYjA5NjQ1MTA0ZTRmMTY2NWFjIiwidXNlcl9pZCI6IjEyIn0.CdqwqSepQ-QEmTB5jwOtMq5xja8uQr5mFLLVWOAsjf0
 
 settings:
   encodeUrl: true

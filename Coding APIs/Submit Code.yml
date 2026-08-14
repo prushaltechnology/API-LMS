@@ -11,7 +11,8 @@ http:
     data: |-
       {
         "question_id": 1,
-        "code": "a, b = map(int, input().split())\nprint(a + b)"
+        "language": "java",
+        "code": "import java.util.*;public class Submission{public static void main(String[] args){Scanner sc = new Scanner(System.in); int a = sc.nextInt();  int b = sc.nextInt();   System.out.println(a + b);    }}"
       }
   auth: inherit
 

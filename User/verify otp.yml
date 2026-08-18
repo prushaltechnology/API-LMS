@@ -13,7 +13,7 @@ http:
     data: |-
       {
         "user_id": 2,
-        "otp": "710645"
+        "otp": "271029"
       }
   auth: inherit
 

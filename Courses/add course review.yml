@@ -7,11 +7,18 @@ info:
 
 http:
   method: POST
-  url: "{{baseUrl}} http://127.0.0.1:8002/api/course_review/18/"
+  url: "{{baseUrl}}api/course_review/30/"
   body:
     type: json
-    data: '"{\r\n    \"rating\": 5,\r\n    \"title\": \"Excellent Course\",\r\n    \"content\": \"Learned a lot from this course!\"\r\n}"'
-  auth: inherit
+    data: |-
+      {
+        "rating": 5,
+        "title": "Excellent Course",
+        "content": "Learned a lot from this course!"
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2OTUyODA1LCJpYXQiOjE3ODY5NTE5MDUsImp0aSI6ImUzOTY2YWJhM2ExMTQzODViYzI4ZmNlNDRjNTIxZmZhIiwidXNlcl9pZCI6IjIifQ.AuQLVsNnB6O8Lw6YqTPdgSxtyl9SX9vMJZrC84Dn5Fs
 
 settings:
   encodeUrl: true

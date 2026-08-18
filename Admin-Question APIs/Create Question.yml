@@ -11,17 +11,19 @@ http:
     data: |-
       {
         "assessment": 13,
-        "question_type": "MCQ",
+        "question_type": "CODING",
         "marks": 4,
         "negative_marks": 0,
-        "order_no": 2,
+        "order_no": 4,
         "is_active": true,
         "content_json": {
-          "title": "Add Two Numbers",
-          "description": "Write a Python program that reads two integers and prints their sum.",
+          "title": "Add Two Numbers in Java",
+          "description": "Write a Java program that reads two integers and prints their sum.",
+          "language": "java",
           "constraints": [
             "The input contains two integers.",
-            "The values can be positive or negative."
+            "The values can be positive, negative, or zero.",
+            "Print only the sum of the two integers."
           ],
           "visible_testcases": [
             {
@@ -45,13 +47,17 @@ http:
             {
               "input": "0 25",
               "output": "25"
+            },
+            {
+              "input": "-10 -20",
+              "output": "-30"
             }
           ]
         }
       }
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2NDM0OTY1LCJpYXQiOjE3ODY0MzQwNjUsImp0aSI6ImU1ZmU5MTVjZjI5MDQ2N2M4ZmRjZTJmZGVkZmNlZGMzIiwidXNlcl9pZCI6IjEyIn0.eZCV5jwjGiLBNqy-nAMN-CQyZ54-Re1ekGdIwZwXh4c
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2NjkwMjU3LCJpYXQiOjE3ODY2ODkzNTcsImp0aSI6IjlmZjRkYzhjYmNlNDQ3NWFiMGI2MjhjNTAwNTU1MGM3IiwidXNlcl9pZCI6IjEyIn0.v9ymfiMPX1EApw5doJVmi_wfcMORYu4p9aFh14Wnrrc
 
 settings:
   encodeUrl: true

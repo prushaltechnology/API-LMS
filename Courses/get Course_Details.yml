@@ -8,7 +8,7 @@ http:
   url: "{{baseUrl}}api/courses/30/"
   auth:
     type: bearer
-    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2NjIyNjkwLCJpYXQiOjE3ODY2MjE3OTAsImp0aSI6ImMwNWNkOTE5NGM3NTRjODQ4NWZiMGZiOWFmOWQ0ZmRiIiwidXNlcl9pZCI6IjIifQ.OPnfuCl7bsSyDExq6s3cp6x36pP3iYd61Q17-EGsIkI
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzg2OTQzNDU3LCJpYXQiOjE3ODY5NDI1NTcsImp0aSI6ImVmNTlhNDVhYjUwZDQyN2Q5MmM5MDEzYjMwYzhiZGQ5IiwidXNlcl9pZCI6IjIifQ.w8NbsL7CpnT3o3gX41W42JHC9V_eXzmeUqfS3MJ3ASo
 
 settings:
   encodeUrl: true
